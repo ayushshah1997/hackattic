@@ -3,9 +3,7 @@ import json
 from hashlib import sha256
 from base import Problem
 
-question_endpoint = '/challenges/mini_miner/problem'
-answer_endpoint = '/challenges/mini_miner/solve'
-p = Problem(question_endpoint=question_endpoint, answer_endpoint=answer_endpoint)
+p = Problem(name='mini_miner')
 
 body = p.get_question()
 difficulty = body['difficulty']
