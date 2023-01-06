@@ -7,9 +7,9 @@ class Problem:
     BASE_URL = 'https://hackattic.com'
     ACCESS_TOKEN = HACK_ATTIC_TOKEN
 
-    def __init__(self, question_endpoint, answer_endpoint, playground = False):
-        self.question_endpoint = self.BASE_URL + question_endpoint + f"?access_token={self.ACCESS_TOKEN}"
-        self.answer_endpoint = self.BASE_URL + answer_endpoint + f"?access_token={self.ACCESS_TOKEN}"
+    def __init__(self, name, playground=False):
+        self.question_endpoint = self.BASE_URL + '/challenges/' + name + '/problem' + f"?access_token={self.ACCESS_TOKEN}"
+        self.answer_endpoint = self.BASE_URL + '/challenges/' + name + '/solve'  f"?access_token={self.ACCESS_TOKEN}"
         if playground:
             self.question_endpoint += '&playground=1'
             self.answer_endpoint += '&playground=1'
